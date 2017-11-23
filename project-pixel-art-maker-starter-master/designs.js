@@ -9,9 +9,9 @@ const table = document.getElementById("pixel_canvas");
 
 function makeGrid(height, width) {
     table.innerHTML = "";
-    for (let h = 1; h <= height; h++) {
+    for (let i = 1; i <= height; i++) {
         const newRow = table.insertRow();
-        for (let w = 1; w <= width; w++) {
+        for (let j = 1; j <= width; j++) {
             const newCell = newRow.insertCell();
             newCell.onclick = colorBox;
         };
@@ -31,7 +31,7 @@ function colorBox() {
 
 const sizePicker = document.getElementById("sizePicker");
 sizePicker.addEventListener("submit", function() {
-    // Submit refreshes the page and we want to stop that in this case.
+    // Submit refreshes the page
     event.preventDefault();
     const height = document.getElementById("input_height").value;
     const width = document.getElementById("input_width").value;
